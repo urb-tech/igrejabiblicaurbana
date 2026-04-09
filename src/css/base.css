@@ -1,0 +1,113 @@
+/* ============================================================
+   BASE — Reset e estilos globais
+   Igreja Bíblica Urbana · igrejabiblicaurbana.pt
+   ============================================================ */
+@import './tokens.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--sans);
+  font-size: var(--f-15);
+  line-height: 1.65;
+  color: var(--branco);
+  background-color: var(--preto);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol { list-style: none; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Tipografia base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif);
+  font-weight: normal;
+  line-height: 1.2;
+  color: var(--branco);
+}
+
+h1 { font-size: clamp(1.75rem, 4vw, var(--f-42)); }
+h2 { font-size: clamp(1.25rem, 3vw, var(--f-28)); }
+h3 { font-size: var(--f-17); }
+h4 { font-size: var(--f-15); font-family: var(--sans); }
+
+p {
+  color: var(--cinza-200);
+  line-height: 1.75;
+}
+
+strong, b {
+  font-weight: 700;
+  color: var(--branco);
+}
+
+/* Utilitários de acessibilidade */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Skip to content */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--amarelo);
+  color: var(--preto);
+  padding: var(--s-2) var(--s-4);
+  font-size: var(--f-13);
+  font-weight: 700;
+  z-index: 9999;
+  transition: top var(--t);
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Eyebrow label — rótulo de secção */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: var(--f-10);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amarelo);
+}
+
+/* Divisor horizontal */
+.divisor {
+  height: 1px;
+  background: var(--cinza-600);
+  border: none;
+}
