@@ -10,7 +10,7 @@
 /* ------------------------------------------------------------
    1. COMPONENTES VIA FETCH
    ------------------------------------------------------------ */
-const BASE = '../assets/components/';
+const BASE = 'src/assets/components/';
 
 async function carregarComponente(selectorPlaceholder, ficheiro) {
   const el = document.querySelector(selectorPlaceholder);
@@ -58,9 +58,9 @@ async function iniciarNav() {
    2. CARROSSEL
    ------------------------------------------------------------ */
 const BANNER = [
-  { src: '../assets/imagens/banner/banner-01.jpg', alt: 'Comunidade da Igreja Bíblica Urbana reunida' },
-  { src: '../assets/imagens/banner/banner-02.jpg', alt: 'Culto dominical da Igreja Bíblica Urbana' },
-  { src: '../assets/imagens/banner/banner-03.jpg', alt: 'Ministério de crianças — Miúdos IBU' },
+  { src: 'src/assets/imagens/banner/banner-01.jpg', alt: 'Comunidade da Igreja Bíblica Urbana reunida' },
+  { src: 'src/assets/imagens/banner/banner-02.jpg', alt: 'Culto dominical da Igreja Bíblica Urbana' },
+  { src: 'src/assets/imagens/banner/banner-03.jpg', alt: 'Ministério de crianças — Miúdos IBU' },
 ];
 
 const INTERVALO_MS = 4500;
