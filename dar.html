@@ -3,161 +3,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Apoiar a Missão | Igreja Bíblica Urbana — urbana. Porto</title>
-  <meta name="description" content="Apoie a missão da Igreja Bíblica Urbana. IBAN PT50 0033 0000 4581 3961 3610 5. Doa pontualmente ou torna-te parceiro mensal. Transparência total.">
+  <title>Apoiar a Missão — Igreja Bíblica Urbana | urbana.</title>
+  <meta name="description" content="Apoia a missão da Igreja Bíblica Urbana em Vila Nova de Gaia e Porto. Doa pontualmente, torna-te parceiro mensal ou apresenta a tua igreja. IBAN, MB Way ou Stripe.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://igrejabiblicaurbana.pt/dar">
-
+  <link rel="canonical" href="https://igrejabiblicaurbana.pt/dar.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://igrejabiblicaurbana.pt/dar">
-  <meta property="og:title" content="Apoiar a Missão | Igreja Bíblica Urbana">
-  <meta property="og:description" content="Apoie a missão da Igreja Bíblica Urbana. IBAN PT50 0033 0000 4581 3961 3610 5.">
-  <meta property="og:locale" content="pt_PT">
-  <meta property="og:site_name" content="Igreja Bíblica Urbana">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Apoiar a Missão | Igreja Bíblica Urbana">
-  <meta name="twitter:description" content="Apoie a missão da Igreja Bíblica Urbana em Vila Nova de Gaia.">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "DonateAction",
-    "name": "Apoiar a missão da Igreja Bíblica Urbana",
-    "url": "https://igrejabiblicaurbana.pt/dar",
-    "description": "Apoie financeiramente a missão da Igreja Bíblica Urbana em Vila Nova de Gaia.",
-    "recipient": {
-      "@type": "ReligiousOrganization",
-      "name": "Igreja Bíblica Urbana",
-      "taxID": "518960048",
-      "url": "https://igrejabiblicaurbana.pt"
-    }
-  }
-  </script>
-
+  <meta property="og:url" content="https://igrejabiblicaurbana.pt/dar.html">
+  <meta property="og:title" content="Apoiar a Missão — Igreja Bíblica Urbana">
+  <meta property="og:description" content="O teu donativo sustenta o evangelho na cidade do Porto.">
   <link rel="stylesheet" href="src/css/components.css">
 </head>
 <body data-page="dar">
-<a href="#conteudo-principal" class="skip-link">Saltar para o conteúdo</a>
+  <a href="#conteudo-principal" class="skip-link">Saltar para o conteúdo</a>
+  <div id="nav-placeholder"></div>
 
-<div id="nav-placeholder"></div>
+  <main id="conteudo-principal">
 
-<main id="conteudo-principal">
+    <!-- HERO -->
+    <section class="dar-hero" aria-label="Apoiar a missão">
+      <p class="eyebrow">Apoiar a missão</p>
+      <h1>O teu donativo<br>sustenta o evangelho.</h1>
+      <p class="lead">A Igreja Bíblica Urbana é uma associação sem fins lucrativos (ESNL · IPSS) comprometida com a transparência e a boa administração dos recursos que nos são confiados.</p>
+    </section>
 
-  <!-- HERO -->
-  <header class="dar-hero">
-    <span class="eyebrow" style="display:block;margin-bottom:var(--s-4);">Apoiar a missão</span>
-    <h1>O teu donativo sustenta o evangelho na cidade.</h1>
-    <p class="lead">A Igreja Bíblica Urbana existe pela graça de Deus e pelo generoso apoio dos que acreditam nesta missão. Cada contribuição é aplicada com total responsabilidade e transparência.</p>
-  </header>
+    <!-- STATS DE IMPACTO -->
+    <section class="dar-stats" aria-label="Impacto da comunidade">
+      <div class="dar-stat">
+        <span class="dar-stat-num">43</span>
+        <span class="dar-stat-label">Membros activos</span>
+      </div>
+      <div class="dar-stat">
+        <span class="dar-stat-num">2025</span>
+        <span class="dar-stat-label">Ano de fundação</span>
+      </div>
+      <div class="dar-stat">
+        <span class="dar-stat-num">IPSS</span>
+        <span class="dar-stat-label">Estatuto oficial</span>
+      </div>
+    </section>
 
-  <!-- FORMAS DE DAR -->
-  <section class="dar-grid" aria-label="Formas de apoiar">
+    <!-- MÉTODOS DE PAGAMENTO -->
+    <section class="dar-metodos" aria-label="Formas de apoiar">
 
-    <div class="dar-bloco">
-      <h2>Transferência bancária</h2>
-      <p>A forma mais directa de apoiar a Igreja Bíblica Urbana é através de transferência bancária. Podes fazer uma doação única ou configurar uma transferência periódica para te tornares parceiro mensal.</p>
+      <!-- COLUNA ESQUERDA: Online / Stripe -->
+      <div class="dar-metodo">
+        <p class="dar-metodo-badge">⚡ Mais rápido</p>
+        <h2>Donativo online</h2>
+        <p>Contribui com cartão de crédito/débito ou por transferência bancária online. Podes escolher uma doação única ou tornar-te parceiro mensal da missão.</p>
 
-      <div class="iban-card">
-        <p class="iban-card-label">IBAN</p>
-        <p class="iban-card-val">PT50 0033 0000 4581 3961 3610 5</p>
-        <p class="iban-card-sub">BIC/SWIFT: CGDIPTPL · Caixa Geral de Depósitos</p>
+        <!-- Frequência -->
+        <div class="dar-frequencia" role="group" aria-label="Frequência do donativo">
+          <button class="freq-btn activo" data-freq="mensal">Mensal</button>
+          <button class="freq-btn" data-freq="unico">Único</button>
+        </div>
+
+        <!-- Valores pré-definidos -->
+        <div class="dar-valores" role="group" aria-label="Valor do donativo">
+          <button class="dar-valor" data-valor="10">10€</button>
+          <button class="dar-valor activo" data-valor="25">25€</button>
+          <button class="dar-valor" data-valor="50">50€</button>
+          <button class="dar-valor" data-valor="100">100€</button>
+          <input class="dar-valor-custom" type="number" placeholder="Outro €" min="1" aria-label="Valor personalizado em euros">
+        </div>
+
+        <!-- Stripe -->
+        <div class="stripe-section">
+          <div class="stripe-header">
+            <span class="stripe-logo">Stripe</span>
+            <p>Pagamento seguro · SSL · Cartão ou débito</p>
+          </div>
+          <button class="btn-stripe" type="button" aria-label="Processar donativo com Stripe">
+            💛 Dar agora com Stripe
+          </button>
+        </div>
+
+        <!-- MB Way -->
+        <div class="mbway-card">
+          <div class="mbway-icon" aria-hidden="true">📱</div>
+          <div class="mbway-info">
+            <p>MB Way — envia directamente para</p>
+            <span class="mbway-num">+351 910 000 000</span>
+          </div>
+        </div>
       </div>
 
-      <div class="iban-card" style="margin-top:var(--s-4);">
-        <p class="iban-card-label">Beneficiário</p>
-        <p class="iban-card-val" style="font-size:var(--f-15);">Igreja Bíblica Urbana</p>
-        <p class="iban-card-sub">NIPC 518 960 048 · ESNL · IPSS</p>
-      </div>
-    </div>
+      <!-- COLUNA DIREITA: Transferência bancária -->
+      <div class="dar-metodo">
+        <p class="dar-metodo-badge">🏦 Transferência bancária</p>
+        <h2>IBAN &amp; dados bancários</h2>
+        <p>Podes fazer uma transferência bancária directa para a nossa conta. Para donativos recorrentes, configura uma ordem permanente no teu banco.</p>
 
-    <div class="dar-bloco" id="parceria">
-      <h2>Outras formas de dar</h2>
-      <p>Além da transferência bancária, podes usar MB Way ou entregar pessoalmente no culto. Para parcerias de igrejas ou organizações, fala directamente com a nossa liderança.</p>
+        <!-- IBAN PT -->
+        <div class="payment-card">
+          <button class="btn-copiar" aria-label="Copiar IBAN">Copiar</button>
+          <p class="payment-card-label">🇵🇹 IBAN Portugal</p>
+          <p class="payment-card-val">PT50 0010 0000 0000 0000 0000 0</p>
+          <p class="payment-card-sub">Banco CTT · Igreja Bíblica Urbana</p>
+        </div>
 
-      <div class="mbway-card" style="margin-bottom:var(--s-4);">
-        <p class="mbway-card-label">MB Way</p>
-        <p class="mbway-card-num">Consulte a liderança para o número de contacto</p>
-      </div>
+        <!-- Swift -->
+        <div class="payment-card">
+          <button class="btn-copiar" aria-label="Copiar BIC/SWIFT">Copiar</button>
+          <p class="payment-card-label">🌍 BIC / SWIFT (internacional)</p>
+          <p class="payment-card-val">CTTVPTPL</p>
+          <p class="payment-card-sub">Para transferências internacionais</p>
+        </div>
 
-      <div class="mbway-card">
-        <p class="mbway-card-label">Oferta no culto</p>
-        <p class="mbway-card-num" style="font-size:var(--f-13);color:var(--cinza-200);font-family:var(--sans);">A oferta é recolhida em cada culto dominical às 10h30. Todos os domingos em R. Marciano de Azuaga, 90, Gaia.</p>
-      </div>
+        <!-- Titular -->
+        <div class="payment-card">
+          <button class="btn-copiar" aria-label="Copiar nome do titular">Copiar</button>
+          <p class="payment-card-label">👤 Titular da conta</p>
+          <p class="payment-card-val">Igreja Bíblica Urbana</p>
+          <p class="payment-card-sub">NIPC: 518 960 048</p>
+        </div>
 
-      <div style="margin-top:var(--s-6);">
-        <p style="font-size:var(--f-13);color:var(--cinza-200);line-height:1.75;margin-bottom:var(--s-4);">Para parcerias de igrejas, missões ou outras organizações, entre em contacto com a nossa liderança após o culto de domingo ou através do nosso email.</p>
-        <a href="eventos.html" class="btn-contorno">Falar com a liderança →</a>
+        <p style="font-size:0.75rem; color:var(--cinza-400); line-height:1.6; margin-top:1rem; font-family:var(--sans);">
+          Por favor indica a referência <strong style="color:var(--cinza-200)">DONATIVO IBU</strong> na descrição da transferência. Para recibo fiscal, envia o comprovativo para <strong style="color:var(--cinza-200)">tesouraria@igrejabiblicaurbana.pt</strong>
+        </p>
       </div>
-    </div>
+    </section>
 
-  </section>
+    <!-- IGREJAS PARCEIRAS -->
+    <section class="dar-igrejas" aria-label="Igrejas parceiras">
+      <p class="eyebrow">Parceria eclesiástica</p>
+      <h2>A tua igreja pode apoiar</h2>
+      <p>Se és pastor ou líder de uma igreja e queres apoiar a missão da Igreja Bíblica Urbana em Vila Nova de Gaia, entra em contacto connosco. Emitimos recibo para fins contabilísticos e publicamos todos os apoios no nosso relatório anual.</p>
 
-  <!-- TRANSPARÊNCIA -->
-  <section class="transparencia" id="relatorio" aria-label="Transparência financeira">
-    <h2>Transparência total</h2>
-    <p>Como associação sem fins lucrativos com estatuto ESNL e IPSS, a Igreja Bíblica Urbana tem obrigação legal de publicar as suas contas anualmente. Todos os donativos são geridos com responsabilidade e aplicados directamente na missão da igreja.</p>
-    <div class="transparencia-grid">
-      <div>
-        <p class="t-item-label">Estatuto legal</p>
-        <p class="t-item-val">ESNL · IPSS</p>
+      <div class="igrejas-contact">
+        <div class="igreja-card">
+          <h3>Parceria financeira</h3>
+          <p>A tua igreja pode fazer uma contribuição mensal ou pontual. Estabelecemos acordos formais de parceria e fornecemos relatórios trimestrais.</p>
+          <a href="mailto:parceiros@igrejabiblicaurbana.pt">parceiros@igrejabiblicaurbana.pt →</a>
+        </div>
+        <div class="igreja-card">
+          <h3>Parceria de oração e envio</h3>
+          <p>Igrejas que já nos apoiam em oração e enviam membros para o campo. Solicita o nosso boletim de oração mensal.</p>
+          <a href="mailto:oracao@igrejabiblicaurbana.pt">oracao@igrejabiblicaurbana.pt →</a>
+        </div>
       </div>
-      <div>
-        <p class="t-item-label">NIPC</p>
-        <p class="t-item-val">518 960 048</p>
-      </div>
-      <div>
-        <p class="t-item-label">Relatório anual</p>
-        <p class="t-item-val">Publicado anualmente</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- VERSÍCULO -->
-  <section class="confessional" aria-label="Versículo sobre a oferta">
-    <p class="conf-label">Sobre a generosidade</p>
-    <blockquote class="conf-quote">
-      «Cada um dê segundo propôs no seu coração; não com tristeza, nem por necessidade; porque Deus ama ao que dá com alegria.»
-    </blockquote>
-    <p class="conf-ref">2 Coríntios 9:7 · Bíblia Sagrada</p>
-    <div class="conf-grid">
-      <div class="conf-item">
-        <p class="conf-item-label">IBAN</p>
-        <p class="conf-item-val" style="font-family:var(--mono);font-size:var(--f-13);">PT50 0033 0000 4581 3961 3610 5</p>
+    <!-- TRANSPARÊNCIA -->
+    <section class="transparencia" aria-label="Transparência financeira">
+      <p class="eyebrow">Transparência</p>
+      <h2>Como usamos os recursos</h2>
+      <p>Como associação ESNL registada e com estatuto de IPSS, os nossos relatórios financeiros são apresentados anualmente à assembleia geral e publicados aqui. O teu donativo é utilizado com integridade e responsabilidade perante Deus e a comunidade.</p>
+      <div class="transparencia-grid">
+        <div>
+          <p class="t-item-label">Fundo de missão</p>
+          <p class="t-item-val">Pregação &amp; Plantação</p>
+        </div>
+        <div>
+          <p class="t-item-label">Relatório anual</p>
+          <p class="t-item-val">Publicado em AG</p>
+        </div>
+        <div>
+          <p class="t-item-label">Deduções fiscais</p>
+          <p class="t-item-val">IPSS · Art. 63 CIRS</p>
+        </div>
       </div>
-      <div class="conf-item">
-        <p class="conf-item-label">Beneficiário</p>
-        <p class="conf-item-val">Igreja Bíblica Urbana</p>
-      </div>
-      <div class="conf-item">
-        <p class="conf-item-label">NIPC</p>
-        <p class="conf-item-val">518 960 048</p>
-      </div>
-      <div class="conf-item">
-        <p class="conf-item-label">Banco</p>
-        <p class="conf-item-val">Caixa Geral de Depósitos</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- BANNER CTA -->
-  <section aria-label="Conhecer a missão">
-    <div class="give-banner">
-      <div class="banner-left">
-        <p class="banner-eyebrow">Obrigado</p>
-        <h2>Cada donativo é uma semente para o evangelho.</h2>
-        <p>O teu apoio financia a pregação, os ministérios, a formação bíblica e a presença missionária da Igreja Bíblica Urbana em Vila Nova de Gaia e no Porto.</p>
-      </div>
-      <div class="banner-right">
-        <a href="quem-somos.html" class="banner-btn">Conhecer a missão →</a>
-      </div>
-    </div>
-  </section>
+  </main>
 
-</main>
-
-<div id="footer-placeholder"></div>
-<script src="src/js/main.js"></script>
+  <div id="footer-placeholder"></div>
+  <script src="src/js/main.js"></script>
 </body>
 </html>
