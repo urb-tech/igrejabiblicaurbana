@@ -1,5 +1,5 @@
 /* main.js — Igreja Bíblica Urbana
-   Fetch de nav/footer, carrossel, menu móvel, animações de entrada */
+   Nav scroll effect, fetch de componentes, carrossel, menu móvel, animações, copiar IBAN */
 
 const BASE = 'src/assets/components/';
 
@@ -17,28 +17,31 @@ async function carregarComponente(selectorPlaceholder, ficheiro) {
 
 async function iniciarNav() {
   await carregarComponente('#nav-placeholder', 'nav.html');
-
   const paginaActual = document.body.dataset.page;
   if (paginaActual) {
     const link = document.querySelector(`.nav-links a[data-page="${paginaActual}"]`);
     if (link) link.setAttribute('aria-current', 'page');
   }
-
   const toggle = document.querySelector('.nav-toggle');
-  const nav    = document.querySelector('.nav');
+  const nav = document.querySelector('.nav');
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
       const expandido = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', expandido ? 'false' : 'true');
       nav.classList.toggle('nav-mobile-open', !expandido);
     });
-
     document.querySelectorAll('.nav-links a').forEach(a => {
       a.addEventListener('click', () => {
         toggle.setAttribute('aria-expanded', 'false');
         nav.classList.remove('nav-mobile-open');
       });
     });
+  }
+  // Efeito de scroll na nav
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
   }
 }
 
@@ -49,12 +52,9 @@ function iniciarCarrossel() {
     { src: 'src/assets/imagens/banner/banner-03.jpg', alt: 'Ministério de crianças — Miúdos IBU' },
   ];
   const INTERVALO_MS = 4500;
-
   const carousel = document.querySelector('.carousel');
   if (!carousel) return;
-
   const placeholder = carousel.querySelector('.carousel-placeholder');
-
   let dotsEl = carousel.querySelector('.carousel-dots');
   if (!dotsEl) {
     dotsEl = document.createElement('div');
@@ -62,9 +62,8 @@ function iniciarCarrossel() {
     dotsEl.setAttribute('aria-hidden', 'true');
     carousel.appendChild(dotsEl);
   }
-
   const slides = [];
-  const dots   = [];
+  const dots = [];
   BANNER.forEach((img, i) => {
     const slide = document.createElement('div');
     slide.className = 'carousel-slide' + (i === 0 ? ' activo' : '');
@@ -73,19 +72,15 @@ function iniciarCarrossel() {
     slide.setAttribute('aria-label', img.alt);
     carousel.insertBefore(slide, dotsEl);
     slides.push(slide);
-
     const dot = document.createElement('button');
     dot.className = 'carousel-dot' + (i === 0 ? ' activo' : '');
     dot.setAttribute('aria-label', 'Ver imagem ' + (i + 1) + ': ' + img.alt);
     dotsEl.appendChild(dot);
     dots.push(dot);
   });
-
   if (placeholder) placeholder.remove();
-
   let atual = 0;
   let timer;
-
   function ir(n) {
     slides[atual].classList.remove('activo');
     dots[atual].classList.remove('activo');
@@ -93,14 +88,11 @@ function iniciarCarrossel() {
     slides[atual].classList.add('activo');
     dots[atual].classList.add('activo');
   }
-
   function reiniciarTimer() {
     clearInterval(timer);
     timer = setInterval(() => ir(atual + 1), INTERVALO_MS);
   }
-
   dots.forEach((dot, i) => dot.addEventListener('click', () => { ir(i); reiniciarTimer(); }));
-
   let touchX = null;
   carousel.addEventListener('touchstart', e => { touchX = e.changedTouches[0].clientX; }, { passive: true });
   carousel.addEventListener('touchend', e => {
@@ -109,42 +101,27 @@ function iniciarCarrossel() {
     if (Math.abs(dx) > 40) { ir(atual + (dx < 0 ? 1 : -1)); reiniciarTimer(); }
     touchX = null;
   }, { passive: true });
-
   reiniciarTimer();
 }
 
-// Elementos dentro de <main> que recebem animação de entrada
+// Animações de entrada
 const SELECTORES_ANIMACAO = [
-  'main h1',
-  'main h2',
-  'main .hero-eyebrow',
-  'main .page-hero .lead',
-  'main .col-block',
-  'main .res-card',
-  'main .min-card',
-  'main .ev',
-  'main .lider-card',
-  'main .cremos-item',
-  'main .conf-item',
-  'main .evento-card',
-  'main .sermao-item',
-  'main .dar-bloco',
-  'main .give-banner',
-  'main .confessional',
-  'main .resources',
-  'main .podcast-embed',
+  'main h1', 'main h2', 'main .hero-eyebrow', 'main .page-hero .lead',
+  'main .col-block', 'main .res-card', 'main .min-card', 'main .ev',
+  'main .lider-card', 'main .cremos-item', 'main .conf-item',
+  'main .evento-card', 'main .sermao-item', 'main .dar-metodo',
+  'main .dar-stat', 'main .give-banner', 'main .confessional',
+  'main .resources', 'main .podcast-embed', 'main .payment-card',
+  'main .igreja-card',
 ].join(', ');
 
 function iniciarAnimacoes() {
   const elementos = document.querySelectorAll(SELECTORES_ANIMACAO);
   if (!elementos.length) return;
-
-  // Fallback sem suporte a IntersectionObserver
   if (!('IntersectionObserver' in window)) {
     elementos.forEach(el => el.classList.add('fade-up', 'is-visible'));
     return;
   }
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
@@ -153,13 +130,60 @@ function iniciarAnimacoes() {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -32px 0px' }
+    { threshold: 0.1, rootMargin: '0px 0px -24px 0px' }
   );
+  elementos.forEach(el => { el.classList.add('fade-up'); observer.observe(el); });
+}
 
-  elementos.forEach(el => {
-    el.classList.add('fade-up');
-    observer.observe(el);
+// Copiar para clipboard (IBAN, MB Way, etc.)
+function iniciarCopiar() {
+  document.querySelectorAll('.btn-copiar').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const card = btn.closest('.payment-card');
+      const val = card ? card.querySelector('.payment-card-val') : null;
+      const texto = val ? val.textContent.trim() : btn.dataset.copiar;
+      if (!texto) return;
+      try {
+        await navigator.clipboard.writeText(texto);
+        btn.textContent = 'Copiado ✓';
+        btn.classList.add('copiado');
+        setTimeout(() => {
+          btn.textContent = 'Copiar';
+          btn.classList.remove('copiado');
+        }, 2000);
+      } catch {
+        btn.textContent = 'Erro';
+      }
+    });
   });
+}
+
+// Seletor de valores na página Dar
+function iniciarDar() {
+  // Valores pré-definidos
+  document.querySelectorAll('.dar-valor[data-valor]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.dar-valor').forEach(b => b.classList.remove('activo'));
+      btn.classList.add('activo');
+      const custom = document.querySelector('.dar-valor-custom');
+      if (custom) custom.value = '';
+    });
+  });
+  // Frequência
+  document.querySelectorAll('.freq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('activo'));
+      btn.classList.add('activo');
+    });
+  });
+  // Botão Stripe (placeholder — integrar com Stripe.js quando disponível)
+  const btnStripe = document.querySelector('.btn-stripe');
+  if (btnStripe) {
+    btnStripe.addEventListener('click', () => {
+      // TODO: integrar Stripe Checkout
+      alert('Integração Stripe em breve. Por favor use o IBAN ou MB Way para já.');
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -169,4 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ]);
   iniciarCarrossel();
   iniciarAnimacoes();
+  iniciarCopiar();
+  iniciarDar();
 });
