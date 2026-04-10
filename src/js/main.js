@@ -1,5 +1,5 @@
-/* main.js — Igreja Bíblica Urbana
-   Nav scroll effect, fetch de componentes, carrossel, menu móvel, animações, copiar IBAN */
+/* main.js — Igreja Bíblica Urbana v2.1
+   Nav scroll effect, fetch de componentes, carrossel, menu móvel, animações, copiar */
 
 const BASE = 'src/assets/components/';
 
@@ -37,7 +37,6 @@ async function iniciarNav() {
       });
     });
   }
-  // Efeito de scroll na nav
   if (nav) {
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 20);
@@ -104,7 +103,6 @@ function iniciarCarrossel() {
   reiniciarTimer();
 }
 
-// Animações de entrada
 const SELECTORES_ANIMACAO = [
   'main h1', 'main h2', 'main .hero-eyebrow', 'main .page-hero .lead',
   'main .col-block', 'main .res-card', 'main .min-card', 'main .ev',
@@ -130,12 +128,14 @@ function iniciarAnimacoes() {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -24px 0px' }
+    { threshold: 0, rootMargin: '0px 0px 60px 0px' }
   );
-  elementos.forEach(el => { el.classList.add('fade-up'); observer.observe(el); });
+  elementos.forEach(el => {
+    el.classList.add('fade-up');
+    observer.observe(el);
+  });
 }
 
-// Copiar para clipboard (IBAN, MB Way, etc.)
 function iniciarCopiar() {
   document.querySelectorAll('.btn-copiar').forEach(btn => {
     btn.addEventListener('click', async () => {
@@ -158,9 +158,7 @@ function iniciarCopiar() {
   });
 }
 
-// Seletor de valores na página Dar
 function iniciarDar() {
-  // Valores pré-definidos
   document.querySelectorAll('.dar-valor[data-valor]').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.dar-valor').forEach(b => b.classList.remove('activo'));
@@ -169,19 +167,16 @@ function iniciarDar() {
       if (custom) custom.value = '';
     });
   });
-  // Frequência
   document.querySelectorAll('.freq-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('activo'));
       btn.classList.add('activo');
     });
   });
-  // Botão Stripe (placeholder — integrar com Stripe.js quando disponível)
   const btnStripe = document.querySelector('.btn-stripe');
   if (btnStripe) {
     btnStripe.addEventListener('click', () => {
-      // TODO: integrar Stripe Checkout
-      alert('Integração Stripe em breve. Por favor use o IBAN ou MB Way para já.');
+      alert('Integração Stripe em breve. Por favor use o IBAN ou MB Way.');
     });
   }
 }
