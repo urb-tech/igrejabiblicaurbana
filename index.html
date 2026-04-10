@@ -7,7 +7,7 @@
   <!-- SEO primário -->
   <title>Igreja Bíblica Urbana | urbana. — Porto, Vila Nova de Gaia</title>
   <meta name="description" content="A Igreja Bíblica Urbana (urbana.) é uma comunidade cristã reformada e missional em Vila Nova de Gaia, Porto. Cultos aos domingos às 10h30. Venha conhecer-nos.">
-  <meta name="keywords" content="Igreja Bíblica Urbana, urbana, igreja reformada Porto, igreja cristã Gaia, igreja evangélica Porto, comunidade cristã Porto, igreja batista Porto, culto domingo Porto">
+  <meta name="keywords" content="Igreja Bíblica Urbana, urbana, igreja reformada Porto, igreja cristã Gaia, igreja evangélica Porto, comunidade cristã Porto, culto domingo Porto">
   <meta name="author" content="Igreja Bíblica Urbana">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://igrejabiblicaurbana.pt/">
@@ -35,322 +35,205 @@
     "url": "https://igrejabiblicaurbana.pt",
     "description": "Comunidade cristã reformada e missional em Vila Nova de Gaia, Porto.",
     "foundingDate": "2025-03",
+    "taxID": "518960048",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "R. Marciano de Azuaga, 90",
       "postalCode": "4430-999",
       "addressLocality": "Vila Nova de Gaia",
+      "addressRegion": "Porto",
       "addressCountry": "PT"
     },
-    "taxID": "518960048",
     "openingHours": "Su 10:30-12:30",
-    "sameAs": []
+    "sameAs": [
+      "https://www.youtube.com/@IBUPorto",
+      "https://open.spotify.com/show/2LvjqEPmOFmng0mJpvSZbi"
+    ]
   }
   </script>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="src/css/components.css">
 </head>
-<body>
+<body data-page="inicio">
+<a href="#conteudo-principal" class="skip-link">Saltar para o conteúdo</a>
 
-<!-- =====================================================
-     NAVEGAÇÃO
-     ===================================================== -->
-<nav role="navigation" aria-label="Menu principal">
-  <a href="/" class="logo-wordmark" aria-label="Igreja Bíblica Urbana — Página inicial">urbana<span>.</span></a>
+<!-- Navegação injectada via JS -->
+<div id="nav-placeholder"></div>
 
-  <div class="nav-links">
-    <a href="/" class="activo" aria-current="page">INÍCIO</a>
-    <a href="quem-somos.html">QUEM SOMOS</a>
-    <a href="ministerios.html">MINISTÉRIOS</a>
-    <a href="recursos.html">RECURSOS</a>
-    <a href="eventos.html">EVENTOS</a>
-    <a href="dar.html">APOIAR</a>
-  </div>
+<main id="conteudo-principal">
 
-  <a href="dar.html" class="nav-cta">Apoie esta Igreja</a>
-</nav>
-
-<!-- =====================================================
-     HERO
-     ===================================================== -->
-<main>
-<section class="hero" aria-label="Apresentação da Igreja Bíblica Urbana">
-  <div class="hero-left">
-    <p class="hero-eyebrow">Desde Março de 2025</p>
-    <h1>Enraizados na Palavra.<br>Plantados na cidade.</h1>
-    <p>Uma comunidade cristã reformada comprometida com o evangelho, a sã doutrina e a transformação de Vila Nova de Gaia e do Porto.</p>
-    <div class="hero-actions">
-      <a href="dar.html" class="btn-amarelo">Apoiar a missão</a>
-      <a href="quem-somos.html" class="btn-branco">Conhecer a igreja</a>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <div class="carousel" aria-label="Fotografias da comunidade" role="img">
-      <!-- Slides gerados por JS -->
-      <div class="carousel-placeholder">
-        <span>Fotografias da comunidade</span>
+  <!-- HERO -->
+  <section class="hero" aria-label="Apresentação da Igreja Bíblica Urbana">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Desde Março de 2025</p>
+      <h1>Enraizados na Palavra.<br>Plantados na cidade.</h1>
+      <p>Uma comunidade cristã reformada comprometida com o evangelho, a sã doutrina e a transformação de Vila Nova de Gaia e do Porto.</p>
+      <div class="hero-actions">
+        <a href="dar.html" class="btn-amarelo">Apoiar a missão</a>
+        <a href="quem-somos.html" class="btn-branco">Conhecer a igreja</a>
       </div>
-      <div class="carousel-dots" aria-hidden="true"></div>
     </div>
-    <div class="hero-info">
-      <p>☕ <strong>Café às 9h45</strong> · Culto às 10h30 · <strong>R. Marciano de Azuaga, 90 — Vila Nova de Gaia</strong></p>
-    </div>
-  </div>
-</section>
 
-<!-- =====================================================
-     TICKER — AGENDA DO MÊS
-     ===================================================== -->
-<div class="ticker" aria-label="Próximos eventos" role="marquee">
-  <div class="ticker-track" id="ticker-track">
-    <!-- Abril 2025 — eventos públicos (sem reuniões pastorais e pequenos grupos) -->
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração de Páscoa</span>&nbsp;<span class="tick-date">Sex 3 Abr</span>&nbsp;<span class="tick-hora">20h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração</span>&nbsp;<span class="tick-date">Dom 5 Abr</span>&nbsp;<span class="tick-hora">10h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensaio do Louvor</span>&nbsp;<span class="tick-date">Qui 9 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração</span>&nbsp;<span class="tick-date">Dom 12 Abr</span>&nbsp;<span class="tick-hora">10h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensino Bíblico — Tiago</span>&nbsp;<span class="tick-date">Seg 13 Abr</span>&nbsp;<span class="tick-hora">20h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Curso de Batismo</span>&nbsp;<span class="tick-date">Qua 15 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensaio do Louvor</span>&nbsp;<span class="tick-date">Qui 16 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Reunião de Mulheres</span>&nbsp;<span class="tick-date">Sáb 18 Abr</span>&nbsp;<span class="tick-hora">15h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração</span>&nbsp;<span class="tick-date">Dom 19 Abr</span>&nbsp;<span class="tick-hora">10h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensino Bíblico — Filipenses</span>&nbsp;<span class="tick-date">Seg 20 Abr</span>&nbsp;<span class="tick-hora">20h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Curso de Batismo</span>&nbsp;<span class="tick-date">Qua 22 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensaio do Louvor</span>&nbsp;<span class="tick-date">Qui 23 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração</span>&nbsp;<span class="tick-date">Dom 26 Abr</span>&nbsp;<span class="tick-hora">10h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensino Bíblico — Tiago</span>&nbsp;<span class="tick-date">Seg 27 Abr</span>&nbsp;<span class="tick-hora">20h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Reunião de Líderes</span>&nbsp;<span class="tick-date">Qua 29 Abr</span>&nbsp;<span class="tick-hora">20h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensaio do Louvor</span>&nbsp;<span class="tick-date">Qui 30 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-    <!-- duplicado para loop contínuo -->
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração de Páscoa</span>&nbsp;<span class="tick-date">Sex 3 Abr</span>&nbsp;<span class="tick-hora">20h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração</span>&nbsp;<span class="tick-date">Dom 5 Abr</span>&nbsp;<span class="tick-hora">10h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensaio do Louvor</span>&nbsp;<span class="tick-date">Qui 9 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração</span>&nbsp;<span class="tick-date">Dom 12 Abr</span>&nbsp;<span class="tick-hora">10h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensino Bíblico — Tiago</span>&nbsp;<span class="tick-date">Seg 13 Abr</span>&nbsp;<span class="tick-hora">20h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Curso de Batismo</span>&nbsp;<span class="tick-date">Qua 15 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensaio do Louvor</span>&nbsp;<span class="tick-date">Qui 16 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Reunião de Mulheres</span>&nbsp;<span class="tick-date">Sáb 18 Abr</span>&nbsp;<span class="tick-hora">15h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração</span>&nbsp;<span class="tick-date">Dom 19 Abr</span>&nbsp;<span class="tick-hora">10h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensino Bíblico — Filipenses</span>&nbsp;<span class="tick-date">Seg 20 Abr</span>&nbsp;<span class="tick-hora">20h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Curso de Batismo</span>&nbsp;<span class="tick-date">Qua 22 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensaio do Louvor</span>&nbsp;<span class="tick-date">Qui 23 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração</span>&nbsp;<span class="tick-date">Dom 26 Abr</span>&nbsp;<span class="tick-hora">10h30</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensino Bíblico — Tiago</span>&nbsp;<span class="tick-date">Seg 27 Abr</span>&nbsp;<span class="tick-hora">20h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Reunião de Líderes</span>&nbsp;<span class="tick-date">Qua 29 Abr</span>&nbsp;<span class="tick-hora">20h00</span></div>
-    <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensaio do Louvor</span>&nbsp;<span class="tick-date">Qui 30 Abr</span>&nbsp;<span class="tick-hora">20h30</span></div>
-  </div>
-</div>
-
-<!-- =====================================================
-     TRÊS COLUNAS
-     ===================================================== -->
-<section class="three-col" aria-label="O que somos">
-  <article class="col-block">
-    <p class="col-label">Quem somos</p>
-    <h2>Uma igreja reformada e missional</h2>
-    <p>Confessamos as doutrinas históricas da Reforma e cremos que o evangelho é a única esperança para o Porto e para o mundo.</p>
-    <a href="quem-somos.html" class="col-link">Ler a nossa confissão</a>
-  </article>
-  <article class="col-block">
-    <p class="col-label">Ministérios</p>
-    <h2>Discipulado, adoração e serviço</h2>
-    <p>Grupos de estudo bíblico, ministério de mulheres, jovens, crianças e apoio social integrado na vida da comunidade.</p>
-    <a href="ministerios.html" class="col-link">Ver os ministérios</a>
-  </article>
-  <article class="col-block">
-    <p class="col-label">Sermões</p>
-    <h2>Pregação expositiva e fiel</h2>
-    <p>Todos os sermões disponíveis para ouvir, ler e partilhar. Séries temáticas e livros bíblicos completos.</p>
-    <a href="recursos.html" class="col-link">Aceder à biblioteca</a>
-  </article>
-</section>
-
-<!-- =====================================================
-     BANNER DOAÇÃO
-     ===================================================== -->
-<section aria-label="Apoiar a missão">
-  <div class="give-banner">
-    <div class="banner-left">
-      <p class="banner-eyebrow">Apoiar a missão</p>
-      <h2>O teu donativo sustenta o evangelho na cidade do Porto.</h2>
-      <p>Doa pontualmente, torna-te parceiro mensal ou traz a tua igreja. Cada contribuição é aplicada com total transparência e publicada anualmente.</p>
-    </div>
-    <div class="banner-right">
-      <div class="banner-stats">
-        <div class="bstat"><span class="bstat-num">43</span><span class="bstat-label">Membros</span></div>
-        <div class="bstat"><span class="bstat-num">2025</span><span class="bstat-label">Fundação</span></div>
-        <div class="bstat"><span class="bstat-num">IPSS</span><span class="bstat-label">Estatuto</span></div>
+    <div class="hero-right">
+      <div class="carousel" aria-label="Fotografias da comunidade" role="region">
+        <div class="carousel-placeholder" aria-hidden="true">
+          <span>Fotografias da comunidade</span>
+        </div>
+        <div class="carousel-dots" aria-hidden="true"></div>
       </div>
-      <div class="banner-divider"></div>
-      <a href="dar.html" class="banner-btn">Ver formas de apoiar →</a>
+      <div class="hero-info">
+        <p>☕ <strong>Café às 9h45</strong> · Culto às 10h30 · <strong>R. Marciano de Azuaga, 90 — Vila Nova de Gaia</strong></p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- =====================================================
-     RECURSOS
-     ===================================================== -->
-<section class="resources" aria-label="Recursos recentes">
-  <div class="res-header">
-    <h2>Recursos recentes</h2>
-    <a href="recursos.html" class="see-all">Ver todos →</a>
+  <!-- TICKER — AGENDA DO MÊS -->
+  <div class="ticker" aria-label="Próximos eventos" role="marquee">
+    <div class="ticker-track" id="ticker-track">
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração</span>&nbsp;<span class="tick-date">Dom · 10h30</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Café de boas-vindas</span>&nbsp;<span class="tick-date">Dom · 9h45</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensaio do Louvor</span>&nbsp;<span class="tick-date">Qui · 20h30</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensino Bíblico — Tiago</span>&nbsp;<span class="tick-date">Seg · 20h00</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Curso de Batismo</span>&nbsp;<span class="tick-date">Qua · 20h30</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Reunião de Mulheres</span>&nbsp;<span class="tick-date">Sáb · 15h00</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensino Bíblico — Filipenses</span>&nbsp;<span class="tick-date">Seg · 20h00</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Pequenos Grupos</span>&nbsp;<span class="tick-date">Diversas datas</span></div>
+      <!-- Duplicado para loop contínuo -->
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Celebração</span>&nbsp;<span class="tick-date">Dom · 10h30</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Café de boas-vindas</span>&nbsp;<span class="tick-date">Dom · 9h45</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensaio do Louvor</span>&nbsp;<span class="tick-date">Qui · 20h30</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensino Bíblico — Tiago</span>&nbsp;<span class="tick-date">Seg · 20h00</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Curso de Batismo</span>&nbsp;<span class="tick-date">Qua · 20h30</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Reunião de Mulheres</span>&nbsp;<span class="tick-date">Sáb · 15h00</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Ensino Bíblico — Filipenses</span>&nbsp;<span class="tick-date">Seg · 20h00</span></div>
+      <div class="tick-item"><span class="tick-dot"></span><span class="tick-text">Pequenos Grupos</span>&nbsp;<span class="tick-date">Diversas datas</span></div>
+    </div>
   </div>
-  <div class="res-grid">
-    <article class="res-card">
-      <p class="res-tag">Sermão · Série Romanos</p>
-      <h3>A justiça de Deus revelada no evangelho</h3>
-      <p>Pregação expositiva em Romanos 1:16–17. O que significa que o justo viverá pela fé?</p>
-      <p class="res-meta">Pastor · Abril 2025</p>
-    </article>
-    <article class="res-card">
-      <p class="res-tag">Ensino · Fundamentos da Fé</p>
-      <h3>O que cremos — Declaração de fé da urbana.</h3>
-      <p>Conheça os pontos essenciais da nossa fé, afirmados por todos os membros desta comunidade.</p>
-      <p class="res-meta">Presbitério IBU · Março 2025</p>
-    </article>
-    <article class="res-card">
-      <p class="res-tag">Estudo · Gálatas</p>
-      <h3>Justificados pela fé — série Gálatas</h3>
-      <p>Ensino bíblico expositivo sobre a carta de Paulo aos Gálatas. Disponível para ouvir e partilhar.</p>
-      <p class="res-meta">Ensino bíblico · 2025</p>
-    </article>
-  </div>
-</section>
 
-<!-- =====================================================
-     SECÇÃO CONFESSIONAL
-     ===================================================== -->
-<section class="confessional" aria-label="A nossa fé">
-  <p class="conf-label">A nossa fé</p>
-  <blockquote class="conf-quote">«Toda a Escritura é inspirada por Deus e útil para ensinar, para repreender, para corrigir e instruir em justiça.»</blockquote>
-  <p class="conf-ref">2 Timóteo 3:16 · Declaração de Fé da Igreja Bíblica Urbana, Bibliologia</p>
-  <div class="conf-grid">
-    <div class="conf-item">
-      <p class="conf-item-label">Tradição</p>
-      <p class="conf-item-val">Reformada Batista</p>
-    </div>
-    <div class="conf-item">
-      <p class="conf-item-label">Confissão</p>
-      <p class="conf-item-val">Londres 1689</p>
-    </div>
-    <div class="conf-item">
-      <p class="conf-item-label">Estatuto</p>
-      <p class="conf-item-val">ESNL · IPSS</p>
-    </div>
-    <div class="conf-item">
-      <p class="conf-item-label">NIPC</p>
-      <p class="conf-item-val">518 960 048</p>
-    </div>
-  </div>
-</section>
+  <!-- TRÊS COLUNAS -->
+  <section class="three-col" aria-label="O que somos">
+    <article class="col-block">
+      <p class="col-label">Quem somos</p>
+      <h2>Uma igreja reformada e missional</h2>
+      <p>Confessamos as doutrinas históricas da Reforma e cremos que o evangelho é a única esperança para o Porto e para o mundo.</p>
+      <a href="quem-somos.html" class="col-link">Ler a nossa confissão</a>
+    </article>
+    <article class="col-block">
+      <p class="col-label">Ministérios</p>
+      <h2>Discipulado, adoração e serviço</h2>
+      <p>Louvor, Miúdos, Mulheres, Homens, Next, Pequenos Grupos, Instituto Bíblico Urbano e muito mais.</p>
+      <a href="ministerios.html" class="col-link">Ver os ministérios</a>
+    </article>
+    <article class="col-block">
+      <p class="col-label">Sermões</p>
+      <h2>Pregação expositiva e fiel</h2>
+      <p>Todos os sermões disponíveis para ouvir e partilhar. Séries temáticas e livros bíblicos completos.</p>
+      <a href="recursos.html" class="col-link">Aceder à biblioteca</a>
+    </article>
+  </section>
 
-<!-- =====================================================
-     EVENTOS
-     ===================================================== -->
-<section class="events-strip" aria-label="Próximos eventos">
-  <article class="ev">
-    <p class="ev-date">Dom · Abr · 10h30</p>
-    <h3>Culto de domingo</h3>
-    <p>Pregação, ceia do Senhor e comunhão. Café a partir das 9h45. Todos são bem-vindos.</p>
-    <a href="eventos.html" class="ev-link">Como chegar →</a>
-  </article>
-  <article class="ev">
-    <p class="ev-date">Qui · Abr · 20h30</p>
-    <h3>Ensaio do louvor</h3>
-    <p>Preparação da adoração congregacional para o culto de domingo. Equipa de louvor.</p>
-    <a href="eventos.html" class="ev-link">Saber mais →</a>
-  </article>
-  <article class="ev">
-    <p class="ev-date">Seg · Abr · 20h00</p>
-    <h3>Ensino bíblico</h3>
-    <p>Séries bíblicas expositivas — Tiago, Filipenses e Gálatas a decorrer em Abril.</p>
-    <a href="eventos.html" class="ev-link">Ver agenda →</a>
-  </article>
-</section>
+  <!-- BANNER DOAÇÃO -->
+  <section aria-label="Apoiar a missão">
+    <div class="give-banner">
+      <div class="banner-left">
+        <p class="banner-eyebrow">Apoiar a missão</p>
+        <h2>O teu donativo sustenta o evangelho na cidade do Porto.</h2>
+        <p>Doa pontualmente, torna-te parceiro mensal ou traz a tua igreja. Cada contribuição é aplicada com total transparência e publicada anualmente.</p>
+      </div>
+      <div class="banner-right">
+        <div class="banner-stats">
+          <div class="bstat"><span class="bstat-num">43</span><span class="bstat-label">Membros</span></div>
+          <div class="bstat"><span class="bstat-num">2025</span><span class="bstat-label">Fundação</span></div>
+          <div class="bstat"><span class="bstat-num">IPSS</span><span class="bstat-label">Estatuto</span></div>
+        </div>
+        <div class="banner-divider"></div>
+        <a href="dar.html" class="banner-btn">Ver formas de apoiar →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECURSOS RECENTES -->
+  <section class="resources" aria-label="Recursos recentes">
+    <div class="res-header">
+      <h2>Recursos recentes</h2>
+      <a href="recursos.html" class="see-all">Ver todos →</a>
+    </div>
+    <div class="res-grid">
+      <article class="res-card">
+        <p class="res-tag">Sermão · Série Romanos</p>
+        <h3>A justiça de Deus revelada no evangelho</h3>
+        <p>Pregação expositiva em Romanos 1:16–17. O que significa que o justo viverá pela fé?</p>
+        <p class="res-meta">Pastor · 2025</p>
+      </article>
+      <article class="res-card">
+        <p class="res-tag">Ensino · Fundamentos da Fé</p>
+        <h3>O que cremos — Declaração de fé da urbana.</h3>
+        <p>Conheça os pontos essenciais da nossa fé, afirmados por todos os membros desta comunidade.</p>
+        <p class="res-meta">Presbitério IBU · Março 2025</p>
+      </article>
+      <article class="res-card">
+        <p class="res-tag">Estudo · Gálatas</p>
+        <h3>Justificados pela fé — série Gálatas</h3>
+        <p>Ensino bíblico expositivo sobre a carta de Paulo aos Gálatas. Disponível para ouvir e partilhar.</p>
+        <p class="res-meta">Ensino bíblico · 2025</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECÇÃO CONFESSIONAL -->
+  <section class="confessional" aria-label="A nossa fé">
+    <p class="conf-label">A nossa fé</p>
+    <blockquote class="conf-quote">
+      «Toda a Escritura é inspirada por Deus e útil para ensinar, para repreender, para corrigir e instruir em justiça.»
+    </blockquote>
+    <p class="conf-ref">2 Timóteo 3:16 · Declaração de Fé da Igreja Bíblica Urbana, Bibliologia</p>
+    <div class="conf-grid">
+      <div class="conf-item">
+        <p class="conf-item-label">Tradição</p>
+        <p class="conf-item-val">Reformada Batista</p>
+      </div>
+      <div class="conf-item">
+        <p class="conf-item-label">Confissão</p>
+        <p class="conf-item-val">Londres 1689</p>
+      </div>
+      <div class="conf-item">
+        <p class="conf-item-label">Estatuto</p>
+        <p class="conf-item-val">ESNL · IPSS</p>
+      </div>
+      <div class="conf-item">
+        <p class="conf-item-label">NIPC</p>
+        <p class="conf-item-val">518 960 048</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTOS PRÓXIMOS -->
+  <section class="events-strip" aria-label="Próximos eventos">
+    <article class="ev">
+      <p class="ev-date">Dom · 10h30</p>
+      <h3>Culto de domingo</h3>
+      <p>Pregação, ceia do Senhor e comunhão. Café a partir das 9h45. Todos são bem-vindos.</p>
+      <a href="eventos.html" class="ev-link">Como chegar →</a>
+    </article>
+    <article class="ev">
+      <p class="ev-date">Qui · 20h30</p>
+      <h3>Ensaio do louvor</h3>
+      <p>Preparação da adoração congregacional para o culto de domingo.</p>
+      <a href="eventos.html" class="ev-link">Saber mais →</a>
+    </article>
+    <article class="ev">
+      <p class="ev-date">Seg · 20h00</p>
+      <h3>Ensino bíblico</h3>
+      <p>Séries bíblicas expositivas — Tiago, Filipenses e Gálatas a decorrer.</p>
+      <a href="eventos.html" class="ev-link">Ver agenda →</a>
+    </article>
+  </section>
+
 </main>
 
-<!-- =====================================================
-     RODAPÉ
-     ===================================================== -->
-<footer role="contentinfo">
-  <div class="footer-grid">
-    <div class="fbrand">
-      <p class="fbrand-name">urbana<span>.</span></p>
-      <p>Comunidade cristã reformada e missional comprometida com o evangelho de Cristo em Vila Nova de Gaia e Porto.</p>
-      <div class="iban-box">
-        <p class="iban-label">Transferência bancária</p>
-        <p class="iban-val">IBAN a disponibilizar brevemente</p>
-      </div>
-      <p class="nipc-box"><strong>Nome:</strong> Igreja Bíblica Urbana<br><strong>NIPC:</strong> 518 960 048<br><strong>Sede:</strong> R. Marciano de Azuaga, 90 — 4430-999 Vila Nova de Gaia</p>
-    </div>
-    <nav class="fcol" aria-label="Igreja">
-      <h4>Igreja</h4>
-      <a href="quem-somos.html">Quem somos</a>
-      <a href="quem-somos.html#lideranca">Liderança</a>
-      <a href="quem-somos.html#fe">O que cremos</a>
-      <a href="quem-somos.html#historia">História</a>
-    </nav>
-    <nav class="fcol" aria-label="Recursos">
-      <h4>Recursos</h4>
-      <a href="recursos.html">Sermões</a>
-      <a href="recursos.html#artigos">Artigos</a>
-      <a href="ministerios.html">Ministérios</a>
-      <a href="recursos.html#relatorio">Relatório anual</a>
-    </nav>
-    <nav class="fcol" aria-label="Contacto">
-      <h4>Contacto</h4>
-      <a href="eventos.html">Localização</a>
-      <a href="eventos.html">Eventos</a>
-      <a href="dar.html">Apoiar</a>
-      <a href="dar.html#parceria">Parceria</a>
-    </nav>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 Igreja Bíblica Urbana · Associação sem fins lucrativos · NIPC 518 960 048</span>
-    <span>igrejabiblicaurbana.pt</span>
-  </div>
-</footer>
+<!-- Rodapé injectado via JS -->
+<div id="footer-placeholder"></div>
 
-<script>
-// Carrossel — suporta imagens quando adicionadas
-(function() {
-  const imagens = []; // adicionar: 'imagens/banner-01.jpg', etc.
-  const carousel = document.querySelector('.carousel');
-  if (!carousel || imagens.length === 0) return;
-
-  const placeholder = carousel.querySelector('.carousel-placeholder');
-  if (placeholder) placeholder.remove();
-
-  const dotsEl = carousel.querySelector('.carousel-dots');
-  let atual = 0;
-
-  imagens.forEach((src, i) => {
-    const slide = document.createElement('div');
-    slide.className = 'carousel-slide' + (i === 0 ? ' activo' : '');
-    slide.style.backgroundImage = 'url(' + src + ')';
-    carousel.insertBefore(slide, dotsEl);
-
-    const dot = document.createElement('button');
-    dot.className = 'carousel-dot' + (i === 0 ? ' activo' : '');
-    dot.setAttribute('aria-label', 'Imagem ' + (i+1));
-    dot.addEventListener('click', () => ir(i));
-    dotsEl.appendChild(dot);
-  });
-
-  const slides = carousel.querySelectorAll('.carousel-slide');
-  const dots = carousel.querySelectorAll('.carousel-dot');
-
-  function ir(n) {
-    slides[atual].classList.remove('activo');
-    dots[atual].classList.remove('activo');
-    atual = (n + imagens.length) % imagens.length;
-    slides[atual].classList.add('activo');
-    dots[atual].classList.add('activo');
-  }
-
-  setInterval(() => ir(atual + 1), 4500);
-})();
-</script>
-
+<script src="src/js/main.js"></script>
 </body>
 </html>
