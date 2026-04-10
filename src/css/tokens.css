@@ -1,1 +1,70 @@
-test
+/* ============================================================
+   TOKENS — Variáveis CSS do sistema de design da urbana.
+   Igreja Bíblica Urbana · igrejabiblicaurbana.pt
+   ============================================================ */
+:root {
+  /* Paleta principal */
+  --preto:         #0A0A0A;
+  --preto-fundo:   #050505;
+  --branco:        #FFFFFF;
+  --amarelo:       #F5C800;
+  --amarelo-hover: #E6B800;
+  --amarelo-dark:  #7A6400;
+
+  /* Escala de cinzentos */
+  --cinza-900: #0D0D0D;
+  --cinza-800: #111111;
+  --cinza-700: #1A1A1A;
+  --cinza-600: #222222;
+  --cinza-500: #333333;
+  --cinza-400: #555555;
+  --cinza-300: #777777;
+  --cinza-200: #AAAAAA;
+  --cinza-100: #CCCCCC;
+
+  /* Borda padrão */
+  --borda: 1px solid #222222;
+  --borda-forte: 2px solid #FFFFFF;
+
+  /* Tipografia */
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans:  system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono:  'Courier New', 'Courier', monospace;
+
+  /* Tamanhos de fonte */
+  --f-10: 0.625rem;   /* 10px */
+  --f-11: 0.6875rem;  /* 11px */
+  --f-12: 0.75rem;    /* 12px */
+  --f-13: 0.8125rem;  /* 13px */
+  --f-15: 0.9375rem;  /* 15px */
+  --f-17: 1.0625rem;  /* 17px */
+  --f-20: 1.25rem;    /* 20px */
+  --f-22: 1.375rem;   /* 22px */
+  --f-24: 1.5rem;     /* 24px */
+  --f-28: 1.75rem;    /* 28px */
+  --f-32: 2rem;       /* 32px */
+  --f-42: 2.625rem;   /* 42px */
+
+  /* Espaçamento */
+  --s-1:  0.25rem;   /* 4px  */
+  --s-2:  0.5rem;    /* 8px  */
+  --s-3:  0.75rem;   /* 12px */
+  --s-4:  1rem;      /* 16px */
+  --s-5:  1.25rem;   /* 20px */
+  --s-6:  1.5rem;    /* 24px */
+  --s-7:  1.75rem;   /* 28px */
+  --s-8:  2rem;      /* 32px */
+  --s-10: 2.5rem;    /* 40px */
+  --s-11: 2.75rem;   /* 44px */
+  --s-12: 3rem;      /* 48px */
+  --s-14: 3.5rem;    /* 56px */
+  --s-16: 4rem;      /* 64px */
+
+  /* Layout */
+  --largura-max: 1200px;
+  --nav-h: 64px;
+  --raio: 2px;
+
+  /* Transições */
+  --t: 0.15s ease;
+}
