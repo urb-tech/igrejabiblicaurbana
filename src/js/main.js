@@ -1,5 +1,5 @@
 /* main.js — Igreja Bíblica Urbana
-   Fetch de nav/footer, carrossel, menu móvel */
+   Fetch de nav/footer, carrossel, menu móvel, animações de entrada */
 
 const BASE = 'src/assets/components/';
 
@@ -55,7 +55,6 @@ function iniciarCarrossel() {
 
   const placeholder = carousel.querySelector('.carousel-placeholder');
 
-  // Garantir contentor de dots
   let dotsEl = carousel.querySelector('.carousel-dots');
   if (!dotsEl) {
     dotsEl = document.createElement('div');
@@ -64,7 +63,6 @@ function iniciarCarrossel() {
     carousel.appendChild(dotsEl);
   }
 
-  // Uma só passagem: criar slide + dot por imagem
   const slides = [];
   const dots   = [];
   BANNER.forEach((img, i) => {
@@ -115,10 +113,60 @@ function iniciarCarrossel() {
   reiniciarTimer();
 }
 
+// Elementos dentro de <main> que recebem animação de entrada
+const SELECTORES_ANIMACAO = [
+  'main h1',
+  'main h2',
+  'main .hero-eyebrow',
+  'main .page-hero .lead',
+  'main .col-block',
+  'main .res-card',
+  'main .min-card',
+  'main .ev',
+  'main .lider-card',
+  'main .cremos-item',
+  'main .conf-item',
+  'main .evento-card',
+  'main .sermao-item',
+  'main .dar-bloco',
+  'main .give-banner',
+  'main .confessional',
+  'main .resources',
+  'main .podcast-embed',
+].join(', ');
+
+function iniciarAnimacoes() {
+  const elementos = document.querySelectorAll(SELECTORES_ANIMACAO);
+  if (!elementos.length) return;
+
+  // Fallback sem suporte a IntersectionObserver
+  if (!('IntersectionObserver' in window)) {
+    elementos.forEach(el => el.classList.add('fade-up', 'is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -32px 0px' }
+  );
+
+  elementos.forEach(el => {
+    el.classList.add('fade-up');
+    observer.observe(el);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   Promise.all([
     iniciarNav(),
     carregarComponente('#footer-placeholder', 'footer.html'),
   ]);
   iniciarCarrossel();
+  iniciarAnimacoes();
 });
