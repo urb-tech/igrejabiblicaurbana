@@ -4,184 +4,212 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Eventos e Agenda | Igreja Bíblica Urbana — urbana. Porto</title>
-  <meta name="description" content="Agenda de eventos da Igreja Bíblica Urbana. Cultos aos domingos às 10h30, ensinos bíblicos, reuniões de louvor e eventos especiais em Vila Nova de Gaia.">
+  <title>Contacto | Igreja Bíblica Urbana — urbana. Porto</title>
+  <meta name="description" content="Fala connosco. Estamos aqui para responder às tuas questões sobre a Igreja Bíblica Urbana em Vila Nova de Gaia, Porto.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://igrejabiblicaurbana.pt/eventos">
+  <link rel="canonical" href="https://igrejabiblicaurbana.pt/contacto">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://igrejabiblicaurbana.pt/eventos">
-  <meta property="og:title" content="Eventos | Igreja Bíblica Urbana">
-  <meta property="og:description" content="Agenda de eventos da Igreja Bíblica Urbana. Cultos, ensinos e eventos especiais.">
+  <meta property="og:url" content="https://igrejabiblicaurbana.pt/contacto">
+  <meta property="og:title" content="Contacto | Igreja Bíblica Urbana">
+  <meta property="og:description" content="Fala connosco. Estamos aqui para responder às tuas questões.">
   <meta property="og:locale" content="pt_PT">
   <meta property="og:site_name" content="Igreja Bíblica Urbana">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Eventos | Igreja Bíblica Urbana">
-  <meta name="twitter:description" content="Agenda de eventos da Igreja Bíblica Urbana em Vila Nova de Gaia.">
+  <meta name="twitter:title" content="Contacto | Igreja Bíblica Urbana">
+  <meta name="twitter:description" content="Fala connosco. Estamos aqui para responder às tuas questões.">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "EventSeries",
-    "name": "Culto Dominical — Igreja Bíblica Urbana",
-    "url": "https://igrejabiblicaurbana.pt/eventos",
-    "description": "Celebração semanal da Igreja Bíblica Urbana aos domingos às 10h30.",
-    "organizer": {
+    "@type": "ContactPage",
+    "name": "Contacto — Igreja Bíblica Urbana",
+    "url": "https://igrejabiblicaurbana.pt/contacto",
+    "description": "Página de contacto da Igreja Bíblica Urbana.",
+    "isPartOf": {
       "@type": "ReligiousOrganization",
       "name": "Igreja Bíblica Urbana",
       "url": "https://igrejabiblicaurbana.pt"
-    },
-    "location": {
-      "@type": "Place",
-      "name": "Igreja Bíblica Urbana",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "R. Marciano de Azuaga, 90",
-        "postalCode": "4430-999",
-        "addressLocality": "Vila Nova de Gaia",
-        "addressCountry": "PT"
-      }
-    },
-    "startDate": "2025-03-01",
-    "eventSchedule": {
-      "@type": "Schedule",
-      "byDay": "https://schema.org/Sunday",
-      "startTime": "10:30",
-      "endTime": "12:30"
     }
   }
   </script>
 
   <link rel="stylesheet" href="src/css/components.css">
+  <style>
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 0;
+      border-bottom: var(--borda);
+    }
+    .contacto-info {
+      padding: var(--s-12) var(--s-14);
+      border-right: var(--borda);
+    }
+    .contacto-info h2 { font-size: var(--f-22); margin-bottom: var(--s-6); }
+    .contacto-info p { font-size: var(--f-13); color: var(--cinza-200); line-height: 1.75; margin-bottom: var(--s-5); }
+    .contacto-detalhe {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-2);
+      margin-bottom: var(--s-6);
+      padding-top: var(--s-6);
+      border-top: var(--borda);
+    }
+    .contacto-detalhe-label {
+      font-size: var(--f-10);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--amarelo);
+      font-family: var(--sans);
+    }
+    .contacto-detalhe-val {
+      font-size: var(--f-13);
+      color: var(--cinza-200);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+    .contacto-form-wrap { padding: var(--s-12) var(--s-14); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); }
+    .form-group { display: flex; flex-direction: column; gap: var(--s-2); margin-bottom: var(--s-5); }
+    .form-group label {
+      font-size: var(--f-11);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--cinza-200);
+      font-family: var(--sans);
+    }
+    .form-group label .obrig { color: var(--amarelo); margin-left: 2px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--cinza-800);
+      border: var(--borda);
+      border-radius: var(--raio);
+      color: var(--branco);
+      font-family: var(--sans);
+      font-size: var(--f-15);
+      padding: var(--s-3) var(--s-4);
+      outline: none;
+      transition: border-color var(--t);
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right var(--s-4) center;
+      padding-right: var(--s-10);
+      cursor: pointer;
+    }
+    .form-group select option { background: var(--cinza-800); color: var(--branco); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--amarelo); }
+    .form-group textarea { resize: vertical; min-height: 140px; line-height: 1.65; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--cinza-400); }
+    .form-submit { margin-top: var(--s-2); }
+    @media (max-width: 960px) {
+      .contacto-grid { grid-template-columns: 1fr; }
+      .contacto-info { border-right: none; border-bottom: var(--borda); padding: var(--s-8) var(--s-7); }
+      .contacto-form-wrap { padding: var(--s-8) var(--s-7); }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-<body data-page="eventos">
+<body data-page="contacto">
 <a href="#conteudo-principal" class="skip-link">Saltar para o conteúdo</a>
 
 <div id="nav-placeholder"></div>
 
 <main id="conteudo-principal">
 
-  <!-- HERO DA PÁGINA -->
   <header class="page-hero">
-    <span class="eyebrow">Eventos</span>
-    <h1>Venha encontrar-se com a comunidade.</h1>
-    <p class="lead">O culto dominical é o coração da vida da Igreja Bíblica Urbana. Mas há muito mais ao longo da semana — ensinos, grupos e eventos para toda a família.</p>
+    <span class="eyebrow">Contacto</span>
+    <h1>Fala connosco.</h1>
+    <p class="lead">Estamos aqui para responder às tuas questões. Preenche o formulário e entraremos em contacto brevemente.</p>
   </header>
 
-  <!-- COMO CHEGAR -->
-  <section style="padding: var(--s-12) var(--s-14); border-bottom: var(--borda); background: var(--cinza-900);" aria-label="Localização e horários">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--s-10);">
-      <div>
-        <p class="eyebrow" style="display:block;margin-bottom:var(--s-4);">Localização</p>
-        <h2 style="font-size:var(--f-22);margin-bottom:var(--s-5);">Como chegar</h2>
-        <p style="font-size:var(--f-15);line-height:1.85;margin-bottom:var(--s-4);">
-          <strong>R. Marciano de Azuaga, 90</strong><br>
-          4430-999 Vila Nova de Gaia<br>
-          Porto, Portugal
-        </p>
-        <p style="font-size:var(--f-13);color:var(--cinza-200);line-height:1.75;">
-          Estamos perto do centro de Gaia, com estacionamento disponível nas imediações. Acessível de transportes públicos.
-        </p>
+  <div class="contacto-grid">
+
+    <aside class="contacto-info">
+      <h2>Informações de contacto</h2>
+      <p>Para questões urgentes ou pastorais, podes também falar connosco pessoalmente após o culto dominical.</p>
+
+      <div class="contacto-detalhe">
+        <span class="contacto-detalhe-label">E-mail</span>
+        <span class="contacto-detalhe-val">geral@igrejabiblicaurbana.pt</span>
       </div>
-      <div>
-        <p class="eyebrow" style="display:block;margin-bottom:var(--s-4);">Horários regulares</p>
-        <h2 style="font-size:var(--f-22);margin-bottom:var(--s-5);">Todos os domingos</h2>
-        <div style="display:flex;flex-direction:column;gap:var(--s-3);">
-          <div style="display:flex;justify-content:space-between;padding:var(--s-3) 0;border-bottom:var(--borda);">
-            <span style="font-size:var(--f-13);color:var(--cinza-200);font-family:var(--sans);">Café de boas-vindas</span>
-            <span style="font-size:var(--f-13);color:var(--amarelo);font-weight:700;font-family:var(--sans);">9h45</span>
+      <div class="contacto-detalhe">
+        <span class="contacto-detalhe-label">Morada</span>
+        <span class="contacto-detalhe-val">R. Marciano de Azuaga, 90<br>4430-999 Vila Nova de Gaia</span>
+      </div>
+      <div class="contacto-detalhe">
+        <span class="contacto-detalhe-label">Culto dominical</span>
+        <span class="contacto-detalhe-val">Café às 9h45 · Celebração às 10h30</span>
+      </div>
+      <div class="contacto-detalhe">
+        <span class="contacto-detalhe-label">Localização</span>
+        <a href="https://maps.google.com/?q=R.+Marciano+de+Azuaga,+90,+4430-999+Vila+Nova+de+Gaia" target="_blank" rel="noopener noreferrer" class="ev-link">Abrir no Google Maps →</a>
+      </div>
+    </aside>
+
+    <div class="contacto-form-wrap">
+      <form
+        action="mailto:geral@igrejabiblicaurbana.pt"
+        method="post"
+        enctype="text/plain"
+        aria-label="Formulário de contacto"
+        novalidate
+        id="form-contacto"
+      >
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome<span class="obrig" aria-label="campo obrigatório">*</span></label>
+            <input type="text" id="nome" name="Nome" placeholder="O teu nome completo" required autocomplete="name">
           </div>
-          <div style="display:flex;justify-content:space-between;padding:var(--s-3) 0;border-bottom:var(--borda);">
-            <span style="font-size:var(--f-13);color:var(--cinza-200);font-family:var(--sans);">Culto de celebração</span>
-            <span style="font-size:var(--f-13);color:var(--amarelo);font-weight:700;font-family:var(--sans);">10h30</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;padding:var(--s-3) 0;border-bottom:var(--borda);">
-            <span style="font-size:var(--f-13);color:var(--cinza-200);font-family:var(--sans);">Miúdos (crianças 3–12)</span>
-            <span style="font-size:var(--f-13);color:var(--amarelo);font-weight:700;font-family:var(--sans);">durante o culto</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;padding:var(--s-3) 0;">
-            <span style="font-size:var(--f-13);color:var(--cinza-200);font-family:var(--sans);">Comunhão após o culto</span>
-            <span style="font-size:var(--f-13);color:var(--amarelo);font-weight:700;font-family:var(--sans);">~12h30</span>
+          <div class="form-group">
+            <label for="email">E-mail<span class="obrig" aria-label="campo obrigatório">*</span></label>
+            <input type="email" id="email" name="Email" placeholder="o.teu@email.com" required autocomplete="email">
           </div>
         </div>
-      </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="telefone">Telefone<span class="obrig" aria-label="campo obrigatório">*</span></label>
+            <input type="tel" id="telefone" name="Telefone" placeholder="+351 9XX XXX XXX" required autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="assunto">Assunto<span class="obrig" aria-label="campo obrigatório">*</span></label>
+            <select id="assunto" name="Assunto" required>
+              <option value="" disabled selected>Selecciona um assunto</option>
+              <option value="Informações gerais">Informações gerais</option>
+              <option value="Visitar a igreja">Visitar a igreja</option>
+              <option value="Doação e apoio">Doação e apoio</option>
+              <option value="Parceria institucional">Parceria institucional</option>
+              <option value="Pedido de oração">Pedido de oração</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="mensagem">Mensagem<span class="obrig" aria-label="campo obrigatório">*</span></label>
+          <textarea id="mensagem" name="Mensagem" placeholder="Escreve aqui a tua mensagem…" required></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-amarelo">Enviar mensagem</button>
+        </div>
+      </form>
     </div>
-  </section>
 
-  <!-- AGENDA — RECORRENTES -->
-  <section class="eventos-mes" aria-label="Eventos recorrentes semanais">
-    <h2>Semana a semana</h2>
-    <article class="evento-card">
-      <div class="evento-data"><span class="evento-dia">Dom</span><span class="evento-mes">Semanal</span></div>
-      <div class="evento-body">
-        <p class="evento-hora">10h30</p>
-        <h3>Culto de Celebração</h3>
-        <p>Pregação expositiva, louvor, oração e ceia do Senhor. Café de boas-vindas a partir das 9h45. Todos são bem-vindos — não precisa de marcar.</p>
-      </div>
-    </article>
-    <article class="evento-card">
-      <div class="evento-data"><span class="evento-dia">Qui</span><span class="evento-mes">Semanal</span></div>
-      <div class="evento-body">
-        <p class="evento-hora">20h30</p>
-        <h3>Ensaio do Louvor</h3>
-        <p>Preparação da adoração congregacional. Equipa de louvor e som. Aberto a músicos e cantores com interesse em servir.</p>
-      </div>
-    </article>
-    <article class="evento-card">
-      <div class="evento-data"><span class="evento-dia">Seg</span><span class="evento-mes">Quinzenal</span></div>
-      <div class="evento-body">
-        <p class="evento-hora">20h00</p>
-        <h3>Ensino Bíblico</h3>
-        <p>Séries bíblicas expositivas — Tiago, Filipenses e Gálatas em curso. Aberto a todos os que queiram aprofundar o estudo da Palavra.</p>
-      </div>
-    </article>
-    <article class="evento-card">
-      <div class="evento-data"><span class="evento-dia">Qua</span><span class="evento-mes">Quinzenal</span></div>
-      <div class="evento-body">
-        <p class="evento-hora">20h30</p>
-        <h3>Curso de Batismo</h3>
-        <p>Formação para os que desejam ser batizados e formalizar a sua entrada como membros da Igreja Bíblica Urbana.</p>
-      </div>
-    </article>
-  </section>
-
-  <!-- AGENDA — PRÓXIMOS EVENTOS ESPECIAIS -->
-  <section class="eventos-mes" aria-label="Eventos especiais">
-    <h2>Próximos eventos especiais</h2>
-    <article class="evento-card">
-      <div class="evento-data"><span class="evento-dia">Sáb</span><span class="evento-mes">Abr</span></div>
-      <div class="evento-body">
-        <p class="evento-hora">15h00</p>
-        <h3>Reunião de Mulheres</h3>
-        <p>Encontro do ministério de Mulheres com estudo bíblico, partilha e oração. Todas as mulheres da comunidade são bem-vindas.</p>
-      </div>
-    </article>
-    <article class="evento-card">
-      <div class="evento-data"><span class="evento-dia">Dom</span><span class="evento-mes">Abr</span></div>
-      <div class="evento-body">
-        <p class="evento-hora">10h30</p>
-        <h3>Celebração com Ceia do Senhor</h3>
-        <p>Culto especial com celebração da Ceia do Senhor — para todos os membros e visitantes crentes.</p>
-      </div>
-    </article>
-    <article class="evento-card">
-      <div class="evento-data"><span class="evento-dia">Seg</span><span class="evento-mes">Abr</span></div>
-      <div class="evento-body">
-        <p class="evento-hora">20h00</p>
-        <h3>Reunião de Líderes</h3>
-        <p>Reunião interna de líderes e responsáveis pelos ministérios.</p>
-      </div>
-    </article>
-  </section>
-
-  <!-- MAPA EMBED (placeholder) -->
-  <section style="border-bottom:var(--borda);" aria-label="Mapa de localização">
-    <div style="background:var(--cinza-800);height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--s-4);">
-      <p style="font-size:var(--f-13);color:var(--cinza-300);font-family:var(--sans);">R. Marciano de Azuaga, 90 · 4430-999 Vila Nova de Gaia</p>
-      <a href="https://maps.google.com/?q=R.+Marciano+de+Azuaga,+90,+4430-999+Vila+Nova+de+Gaia" target="_blank" rel="noopener noreferrer" class="btn-contorno">Abrir no Google Maps →</a>
-    </div>
-  </section>
+  </div>
 
 </main>
 
