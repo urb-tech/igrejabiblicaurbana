@@ -1,18 +1,16 @@
-/* main.js — Igreja Bíblica Urbana v2.1
-   Nav scroll effect, fetch de componentes, carrossel, menu móvel, animações, copiar */
+/* main.js v3 — Igreja Bíblica Urbana
+   Nav pill scroll, carrossel, reveal animations, copiar, dar */
 
 const BASE = 'src/assets/components/';
 
-async function carregarComponente(selectorPlaceholder, ficheiro) {
-  const el = document.querySelector(selectorPlaceholder);
+async function carregarComponente(sel, ficheiro) {
+  const el = document.querySelector(sel);
   if (!el) return;
   try {
     const res = await fetch(BASE + ficheiro);
     if (!res.ok) throw new Error('HTTP ' + res.status);
     el.innerHTML = await res.text();
-  } catch (err) {
-    console.warn('Erro ao carregar componente:', ficheiro, err);
-  }
+  } catch (err) { console.warn('Componente:', ficheiro, err); }
 }
 
 async function iniciarNav() {
@@ -26,9 +24,9 @@ async function iniciarNav() {
   const nav = document.querySelector('.nav');
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
-      const expandido = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', expandido ? 'false' : 'true');
-      nav.classList.toggle('nav-mobile-open', !expandido);
+      const exp = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', exp ? 'false' : 'true');
+      nav.classList.toggle('nav-mobile-open', !exp);
     });
     document.querySelectorAll('.nav-links a').forEach(a => {
       a.addEventListener('click', () => {
@@ -38,59 +36,43 @@ async function iniciarNav() {
     });
   }
   if (nav) {
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
 }
 
 function iniciarCarrossel() {
   const BANNER = [
-    { src: 'src/assets/imagens/banner/banner-01.jpg', alt: 'Comunidade da Igreja Bíblica Urbana reunida' },
-    { src: 'src/assets/imagens/banner/banner-02.jpg', alt: 'Culto dominical da Igreja Bíblica Urbana' },
-    { src: 'src/assets/imagens/banner/banner-03.jpg', alt: 'Ministério de crianças — Miúdos IBU' },
+    { src: 'src/assets/imagens/banner/banner-01.jpg', alt: 'Comunidade IBU reunida' },
+    { src: 'src/assets/imagens/banner/banner-02.jpg', alt: 'Culto dominical IBU' },
+    { src: 'src/assets/imagens/banner/banner-03.jpg', alt: 'Ministério de crianças IBU' },
   ];
-  const INTERVALO_MS = 4500;
   const carousel = document.querySelector('.carousel');
   if (!carousel) return;
   const placeholder = carousel.querySelector('.carousel-placeholder');
   let dotsEl = carousel.querySelector('.carousel-dots');
-  if (!dotsEl) {
-    dotsEl = document.createElement('div');
-    dotsEl.className = 'carousel-dots';
-    dotsEl.setAttribute('aria-hidden', 'true');
-    carousel.appendChild(dotsEl);
-  }
-  const slides = [];
-  const dots = [];
+  if (!dotsEl) { dotsEl = document.createElement('div'); dotsEl.className = 'carousel-dots'; dotsEl.setAttribute('aria-hidden', 'true'); carousel.appendChild(dotsEl); }
+  const slides = [], dots = [];
   BANNER.forEach((img, i) => {
     const slide = document.createElement('div');
     slide.className = 'carousel-slide' + (i === 0 ? ' activo' : '');
     slide.style.backgroundImage = `url(${img.src})`;
-    slide.setAttribute('role', 'img');
-    slide.setAttribute('aria-label', img.alt);
-    carousel.insertBefore(slide, dotsEl);
-    slides.push(slide);
+    slide.setAttribute('role', 'img'); slide.setAttribute('aria-label', img.alt);
+    carousel.insertBefore(slide, dotsEl); slides.push(slide);
     const dot = document.createElement('button');
     dot.className = 'carousel-dot' + (i === 0 ? ' activo' : '');
-    dot.setAttribute('aria-label', 'Ver imagem ' + (i + 1) + ': ' + img.alt);
-    dotsEl.appendChild(dot);
-    dots.push(dot);
+    dot.setAttribute('aria-label', `Ver imagem ${i + 1}`);
+    dotsEl.appendChild(dot); dots.push(dot);
   });
   if (placeholder) placeholder.remove();
-  let atual = 0;
-  let timer;
+  let atual = 0, timer;
   function ir(n) {
-    slides[atual].classList.remove('activo');
-    dots[atual].classList.remove('activo');
+    slides[atual].classList.remove('activo'); dots[atual].classList.remove('activo');
     atual = (n + BANNER.length) % BANNER.length;
-    slides[atual].classList.add('activo');
-    dots[atual].classList.add('activo');
+    slides[atual].classList.add('activo'); dots[atual].classList.add('activo');
   }
-  function reiniciarTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => ir(atual + 1), INTERVALO_MS);
-  }
+  function reiniciarTimer() { clearInterval(timer); timer = setInterval(() => ir(atual + 1), 5000); }
   dots.forEach((dot, i) => dot.addEventListener('click', () => { ir(i); reiniciarTimer(); }));
   let touchX = null;
   carousel.addEventListener('touchstart', e => { touchX = e.changedTouches[0].clientX; }, { passive: true });
@@ -103,37 +85,15 @@ function iniciarCarrossel() {
   reiniciarTimer();
 }
 
-const SELECTORES_ANIMACAO = [
-  'main h1', 'main h2', 'main .hero-eyebrow', 'main .page-hero .lead',
-  'main .col-block', 'main .res-card', 'main .min-card', 'main .ev',
-  'main .lider-card', 'main .cremos-item', 'main .conf-item',
-  'main .evento-card', 'main .sermao-item', 'main .dar-metodo',
-  'main .dar-stat', 'main .give-banner', 'main .confessional',
-  'main .resources', 'main .podcast-embed', 'main .payment-card',
-  'main .igreja-card',
-].join(', ');
-
-function iniciarAnimacoes() {
-  const elementos = document.querySelectorAll(SELECTORES_ANIMACAO);
-  if (!elementos.length) return;
-  if (!('IntersectionObserver' in window)) {
-    elementos.forEach(el => el.classList.add('fade-up', 'is-visible'));
-    return;
-  }
+function iniciarReveal() {
+  const els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('visible')); return; }
   const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0, rootMargin: '0px 0px 60px 0px' }
+    entries => entries.forEach(entry => { if (!entry.isIntersecting) return; entry.target.classList.add('visible'); observer.unobserve(entry.target); }),
+    { threshold: 0, rootMargin: '0px 0px 80px 0px' }
   );
-  elementos.forEach(el => {
-    el.classList.add('fade-up');
-    observer.observe(el);
-  });
+  els.forEach(el => observer.observe(el));
 }
 
 function iniciarCopiar() {
@@ -141,19 +101,14 @@ function iniciarCopiar() {
     btn.addEventListener('click', async () => {
       const card = btn.closest('.payment-card');
       const val = card ? card.querySelector('.payment-card-val') : null;
-      const texto = val ? val.textContent.trim() : btn.dataset.copiar;
+      const texto = val ? val.textContent.trim() : '';
       if (!texto) return;
       try {
         await navigator.clipboard.writeText(texto);
-        btn.textContent = 'Copiado ✓';
-        btn.classList.add('copiado');
-        setTimeout(() => {
-          btn.textContent = 'Copiar';
-          btn.classList.remove('copiado');
-        }, 2000);
-      } catch {
-        btn.textContent = 'Erro';
-      }
+        const orig = btn.textContent;
+        btn.textContent = '✓ Copiado'; btn.classList.add('copiado');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copiado'); }, 2000);
+      } catch { btn.textContent = 'Erro'; }
     });
   });
 }
@@ -174,20 +129,13 @@ function iniciarDar() {
     });
   });
   const btnStripe = document.querySelector('.btn-stripe');
-  if (btnStripe) {
-    btnStripe.addEventListener('click', () => {
-      alert('Integração Stripe em breve. Por favor use o IBAN ou MB Way.');
-    });
-  }
+  if (btnStripe) btnStripe.addEventListener('click', () => { alert('Integração Stripe em breve. Use o IBAN ou MB Way.'); });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  Promise.all([
-    iniciarNav(),
-    carregarComponente('#footer-placeholder', 'footer.html'),
-  ]);
+  Promise.all([iniciarNav(), carregarComponente('#footer-placeholder', 'footer.html')]);
   iniciarCarrossel();
-  iniciarAnimacoes();
+  iniciarReveal();
   iniciarCopiar();
   iniciarDar();
 });
