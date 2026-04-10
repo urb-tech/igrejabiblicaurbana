@@ -1,218 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Contacto | Igreja Bíblica Urbana — urbana. Porto</title>
-  <meta name="description" content="Fala connosco. Estamos aqui para responder às tuas questões sobre a Igreja Bíblica Urbana em Vila Nova de Gaia, Porto.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://igrejabiblicaurbana.pt/contacto">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://igrejabiblicaurbana.pt/contacto">
-  <meta property="og:title" content="Contacto | Igreja Bíblica Urbana">
-  <meta property="og:description" content="Fala connosco. Estamos aqui para responder às tuas questões.">
-  <meta property="og:locale" content="pt_PT">
-  <meta property="og:site_name" content="Igreja Bíblica Urbana">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contacto | Igreja Bíblica Urbana">
-  <meta name="twitter:description" content="Fala connosco. Estamos aqui para responder às tuas questões.">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contacto — Igreja Bíblica Urbana",
-    "url": "https://igrejabiblicaurbana.pt/contacto",
-    "description": "Página de contacto da Igreja Bíblica Urbana.",
-    "isPartOf": {
-      "@type": "ReligiousOrganization",
-      "name": "Igreja Bíblica Urbana",
-      "url": "https://igrejabiblicaurbana.pt"
-    }
-  }
-  </script>
-
-  <link rel="stylesheet" href="src/css/components.css">
-  <style>
-    .contacto-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 0;
-      border-bottom: var(--borda);
-    }
-    .contacto-info {
-      padding: var(--s-12) var(--s-14);
-      border-right: var(--borda);
-    }
-    .contacto-info h2 { font-size: var(--f-22); margin-bottom: var(--s-6); }
-    .contacto-info p { font-size: var(--f-13); color: var(--cinza-200); line-height: 1.75; margin-bottom: var(--s-5); }
-    .contacto-detalhe {
-      display: flex;
-      flex-direction: column;
-      gap: var(--s-2);
-      margin-bottom: var(--s-6);
-      padding-top: var(--s-6);
-      border-top: var(--borda);
-    }
-    .contacto-detalhe-label {
-      font-size: var(--f-10);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--amarelo);
-      font-family: var(--sans);
-    }
-    .contacto-detalhe-val {
-      font-size: var(--f-13);
-      color: var(--cinza-200);
-      font-family: var(--sans);
-      line-height: 1.6;
-    }
-    .contacto-form-wrap { padding: var(--s-12) var(--s-14); }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-4); }
-    .form-group { display: flex; flex-direction: column; gap: var(--s-2); margin-bottom: var(--s-5); }
-    .form-group label {
-      font-size: var(--f-11);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--cinza-200);
-      font-family: var(--sans);
-    }
-    .form-group label .obrig { color: var(--amarelo); margin-left: 2px; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      background: var(--cinza-800);
-      border: var(--borda);
-      border-radius: var(--raio);
-      color: var(--branco);
-      font-family: var(--sans);
-      font-size: var(--f-15);
-      padding: var(--s-3) var(--s-4);
-      outline: none;
-      transition: border-color var(--t);
-      width: 100%;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-    .form-group select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right var(--s-4) center;
-      padding-right: var(--s-10);
-      cursor: pointer;
-    }
-    .form-group select option { background: var(--cinza-800); color: var(--branco); }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--amarelo); }
-    .form-group textarea { resize: vertical; min-height: 140px; line-height: 1.65; }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--cinza-400); }
-    .form-submit { margin-top: var(--s-2); }
-    @media (max-width: 960px) {
-      .contacto-grid { grid-template-columns: 1fr; }
-      .contacto-info { border-right: none; border-bottom: var(--borda); padding: var(--s-8) var(--s-7); }
-      .contacto-form-wrap { padding: var(--s-8) var(--s-7); }
-      .form-row { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eventos & Agenda | Igreja Bíblica Urbana — urbana. Porto</title>
+<meta name="description" content="Agenda e eventos da Igreja Bíblica Urbana em Vila Nova de Gaia. Cultos, ensinos bíblicos, pequenos grupos e eventos especiais.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://igrejabiblicaurbana.pt/eventos">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://igrejabiblicaurbana.pt/eventos">
+<meta property="og:title" content="Eventos & Agenda | Igreja Bíblica Urbana">
+<link rel="stylesheet" href="src/css/components.css">
 </head>
-<body data-page="contacto">
+<body data-page="eventos">
 <a href="#conteudo-principal" class="skip-link">Saltar para o conteúdo</a>
-
 <div id="nav-placeholder"></div>
-
 <main id="conteudo-principal">
 
-  <header class="page-hero">
-    <span class="eyebrow">Contacto</span>
-    <h1>Fala connosco.</h1>
-    <p class="lead">Estamos aqui para responder às tuas questões. Preenche o formulário e entraremos em contacto brevemente.</p>
-  </header>
-
-  <div class="contacto-grid">
-
-    <aside class="contacto-info">
-      <h2>Informações de contacto</h2>
-      <p>Para questões urgentes ou pastorais, podes também falar connosco pessoalmente após o culto dominical.</p>
-
-      <div class="contacto-detalhe">
-        <span class="contacto-detalhe-label">E-mail</span>
-        <span class="contacto-detalhe-val">geral@igrejabiblicaurbana.pt</span>
-      </div>
-      <div class="contacto-detalhe">
-        <span class="contacto-detalhe-label">Morada</span>
-        <span class="contacto-detalhe-val">R. Marciano de Azuaga, 90<br>4430-999 Vila Nova de Gaia</span>
-      </div>
-      <div class="contacto-detalhe">
-        <span class="contacto-detalhe-label">Culto dominical</span>
-        <span class="contacto-detalhe-val">Café às 9h45 · Celebração às 10h30</span>
-      </div>
-      <div class="contacto-detalhe">
-        <span class="contacto-detalhe-label">Localização</span>
-        <a href="https://maps.google.com/?q=R.+Marciano+de+Azuaga,+90,+4430-999+Vila+Nova+de+Gaia" target="_blank" rel="noopener noreferrer" class="ev-link">Abrir no Google Maps →</a>
-      </div>
-    </aside>
-
-    <div class="contacto-form-wrap">
-      <form
-        action="mailto:geral@igrejabiblicaurbana.pt"
-        method="post"
-        enctype="text/plain"
-        aria-label="Formulário de contacto"
-        novalidate
-        id="form-contacto"
-      >
-        <div class="form-row">
-          <div class="form-group">
-            <label for="nome">Nome<span class="obrig" aria-label="campo obrigatório">*</span></label>
-            <input type="text" id="nome" name="Nome" placeholder="O teu nome completo" required autocomplete="name">
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail<span class="obrig" aria-label="campo obrigatório">*</span></label>
-            <input type="email" id="email" name="Email" placeholder="o.teu@email.com" required autocomplete="email">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="telefone">Telefone<span class="obrig" aria-label="campo obrigatório">*</span></label>
-            <input type="tel" id="telefone" name="Telefone" placeholder="+351 9XX XXX XXX" required autocomplete="tel">
-          </div>
-          <div class="form-group">
-            <label for="assunto">Assunto<span class="obrig" aria-label="campo obrigatório">*</span></label>
-            <select id="assunto" name="Assunto" required>
-              <option value="" disabled selected>Selecciona um assunto</option>
-              <option value="Informações gerais">Informações gerais</option>
-              <option value="Visitar a igreja">Visitar a igreja</option>
-              <option value="Doação e apoio">Doação e apoio</option>
-              <option value="Parceria institucional">Parceria institucional</option>
-              <option value="Pedido de oração">Pedido de oração</option>
-              <option value="Outro">Outro</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="mensagem">Mensagem<span class="obrig" aria-label="campo obrigatório">*</span></label>
-          <textarea id="mensagem" name="Mensagem" placeholder="Escreve aqui a tua mensagem…" required></textarea>
-        </div>
-
-        <div class="form-submit">
-          <button type="submit" class="btn-amarelo">Enviar mensagem</button>
-        </div>
-      </form>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-eyebrow">Agenda</span>
+      <h1>O que está a<br><em>acontecer.</em></h1>
+      <p class="lead">Todos são bem-vindos. Vem como és — encontrarás uma comunidade que te recebe com o amor de Cristo e te desafia a crescer nas Escrituras.</p>
     </div>
+  </section>
 
-  </div>
+  <!-- RECORRENTES -->
+  <section style="padding: var(--s-8) 0 var(--s-20);">
+    <div class="container">
+
+      <p class="section-eyebrow">Semanal</p>
+      <h2 class="section-title" style="margin-bottom: var(--s-10);">Eventos regulares</h2>
+
+      <div class="eventos-mes">
+        <div class="evento-card reveal">
+          <div class="evento-data"><span class="evento-dia">Dom</span><span class="evento-mes">Semanal</span></div>
+          <div class="evento-body">
+            <p class="evento-hora">☕ 9h45 · 🙏 10h30</p>
+            <h3>Culto de domingo</h3>
+            <p>Pregação expositiva da Palavra, louvor congregacional, ceia do Senhor (mensal) e comunhão. Café e boas-vindas a partir das 9h45. Crianças com programa próprio (Miúdos IBU).</p>
+          </div>
+        </div>
+        <div class="evento-card reveal">
+          <div class="evento-data"><span class="evento-dia">Seg</span><span class="evento-mes">Semanal</span></div>
+          <div class="evento-body">
+            <p class="evento-hora">🕗 20h30</p>
+            <h3>Ensino Bíblico</h3>
+            <p>Estudo expositivo de livros bíblicos em formato de aula. Séries actuais: Tiago, Filipenses e Gálatas. Aberto a todos — crentes e curiosos.</p>
+          </div>
+        </div>
+        <div class="evento-card reveal">
+          <div class="evento-data"><span class="evento-dia">Qui</span><span class="evento-mes">Semanal</span></div>
+          <div class="evento-body">
+            <p class="evento-hora">🕗 20h30</p>
+            <h3>Ensaio do Louvor</h3>
+            <p>A equipa de louvor prepara a adoração congregacional para o culto de domingo. Aberto a músicos e cantores que queiram servir neste ministério.</p>
+          </div>
+        </div>
+        <div class="evento-card reveal">
+          <div class="evento-data"><span class="evento-dia">Sex</span><span class="evento-mes">Quinzenal</span></div>
+          <div class="evento-body">
+            <p class="evento-hora">🕗 20h30</p>
+            <h3>Pequenos Grupos</h3>
+            <p>Grupos de 8-12 pessoas que se reúnem em casas para estudo bíblico, oração e comunhão real. Entra em contacto para saber qual o grupo mais perto de ti.</p>
+          </div>
+        </div>
+        <div class="evento-card reveal">
+          <div class="evento-data"><span class="evento-dia">Sáb</span><span class="evento-mes">Mensal</span></div>
+          <div class="evento-body">
+            <p class="evento-hora">🕒 15h00</p>
+            <h3>Reunião de Mulheres</h3>
+            <p>Encontro mensal do ministério de mulheres — estudo bíblico, oração e comunhão. Todas as mulheres são bem-vindas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO CHEGAR — full-width destaque -->
+  <section style="background: var(--cinza-900); padding: var(--s-20) 0; border-top: var(--borda); border-bottom: var(--borda);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-12); align-items: center;">
+        <div class="reveal">
+          <p class="section-eyebrow">Localização</p>
+          <h2 class="section-title">Como chegar</h2>
+          <p style="font-size: var(--f-15); color: var(--cinza-200); line-height: 1.8; margin-bottom: var(--s-6); font-family: var(--sans);">Estamos em Vila Nova de Gaia, a poucos minutos do Metro de Gaia. Há estacionamento gratuito nas proximidades ao domingo.</p>
+          <div style="background: var(--cinza-800); border: var(--borda-card); border-radius: var(--raio-xl); padding: var(--s-6);">
+            <p style="font-size: var(--f-11); letter-spacing: 2px; text-transform: uppercase; color: var(--amarelo); font-weight: 700; font-family: var(--sans); margin-bottom: var(--s-3);">Morada</p>
+            <p style="font-family: var(--serif); font-size: var(--f-20); color: var(--branco); margin-bottom: var(--s-2);">R. Marciano de Azuaga, 90</p>
+            <p style="font-size: var(--f-14); color: var(--cinza-300); font-family: var(--sans);">4430-999 Vila Nova de Gaia</p>
+          </div>
+        </div>
+        <div class="reveal reveal-right" style="background: var(--cinza-800); border: var(--borda-card); border-radius: var(--raio-xl); overflow: hidden; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
+          <div style="text-align: center;">
+            <div style="font-size: 3rem; margin-bottom: var(--s-4);">📍</div>
+            <p style="font-size: var(--f-13); color: var(--cinza-300); font-family: var(--sans);">Mapa em breve</p>
+            <a href="https://maps.google.com/?q=R.+Marciano+de+Azuaga+90+Vila+Nova+de+Gaia" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; margin-top: var(--s-4); font-size: var(--f-13); font-weight: 700; color: var(--amarelo); font-family: var(--sans);">Abrir no Google Maps →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="padding: var(--s-20) 0;">
+    <div class="container" style="text-align: center;">
+      <p class="section-eyebrow" style="justify-content: center;">Dúvidas?</p>
+      <h2 class="section-title">Fala connosco</h2>
+      <p style="font-size: var(--f-15); color: var(--cinza-200); max-width: 480px; margin: 0 auto var(--s-8); line-height: 1.7; font-family: var(--sans);">Tens perguntas sobre os horários, os ministérios ou simplesmente queres saber mais? Entra em contacto — teremos todo o gosto em responder.</p>
+      <a href="mailto:geral@igrejabiblicaurbana.pt" class="btn-amarelo">geral@igrejabiblicaurbana.pt</a>
+    </div>
+  </section>
 
 </main>
-
 <div id="footer-placeholder"></div>
 <script src="src/js/main.js"></script>
 </body>
