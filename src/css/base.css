@@ -1,5 +1,5 @@
 /* ============================================================
-   BASE — Reset e estilos globais
+   BASE — Reset, estilos globais e animações de entrada
    Igreja Bíblica Urbana · igrejabiblicaurbana.pt
    ============================================================ */
 @import './tokens.css';
@@ -24,6 +24,7 @@ body {
   background-color: var(--preto);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: var(--nav-h);
 }
 
 img, svg, video {
@@ -45,7 +46,23 @@ button {
   background: none;
 }
 
-/* Tipografia base */
+/* ============================================================
+   NAVEGAÇÃO FIXA — regra base (detalhes de estilo em components.css)
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav, 100);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 10, 10, 0.92);
+}
+
+/* ============================================================
+   TIPOGRAFIA BASE
+   ============================================================ */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--serif);
   font-weight: normal;
@@ -68,7 +85,41 @@ strong, b {
   color: var(--branco);
 }
 
-/* Utilitários de acessibilidade */
+/* ============================================================
+   ANIMAÇÕES DE ENTRADA (IntersectionObserver)
+   Classe .fade-up adicionada via JS; .is-visible activada pelo observer
+   ============================================================ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  will-change: opacity, transform;
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger para grupos de cards/itens irmãos */
+.fade-up:nth-child(2) { transition-delay: 0.08s; }
+.fade-up:nth-child(3) { transition-delay: 0.16s; }
+.fade-up:nth-child(4) { transition-delay: 0.24s; }
+.fade-up:nth-child(5) { transition-delay: 0.32s; }
+.fade-up:nth-child(6) { transition-delay: 0.40s; }
+
+/* Respeitar preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   UTILITÁRIOS
+   ============================================================ */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -78,7 +129,6 @@ strong, b {
   white-space: nowrap;
 }
 
-/* Skip to content */
 .skip-link {
   position: absolute;
   top: -100%;
@@ -91,11 +141,8 @@ strong, b {
   z-index: 9999;
   transition: top var(--t);
 }
-.skip-link:focus {
-  top: 0;
-}
+.skip-link:focus { top: 0; }
 
-/* Eyebrow label — rótulo de secção */
 .eyebrow {
   font-family: var(--sans);
   font-size: var(--f-10);
@@ -105,7 +152,6 @@ strong, b {
   color: var(--amarelo);
 }
 
-/* Divisor horizontal */
 .divisor {
   height: 1px;
   background: var(--cinza-600);
